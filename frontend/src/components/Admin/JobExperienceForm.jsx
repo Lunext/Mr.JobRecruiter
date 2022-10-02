@@ -47,13 +47,23 @@ const JobExperienceForm = () => {
             });
             return; 
 
-        }if(parseFloat(salary)<0){
+            
+        }
+        if(parseFloat(salary)===0){
+            setAlert({
+                msg:'El salario no puede ser neutro', 
+                error:true
+            });
+            return; 
+        }
+        if(parseFloat(salary)<0){
             setAlert({
                 msg:'El salario no puede ser negativo!', 
                 error:true
             });
             return;
         }
+        
         let result=await saveJobExperience({company,jobPosition,dateFrom,dateTo,salary,id}); 
         if(result){
             setAlert({
@@ -101,12 +111,12 @@ const JobExperienceForm = () => {
             />
         </div>
         <div className='mb-5'>
-            <label htmlFor="company">
+            <label htmlFor="jobPosition">
                 Puesto
             </label>
             <input type="text" 
-                id="company"
-                placeholder='Introduzca una capacitación'
+                id="jobPosition"
+                placeholder='Introduzca un puesto laboral'
                 className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
                 value={jobPosition}
                 onChange={e=>setJobPosition(e.target.value)}
@@ -138,7 +148,7 @@ const JobExperienceForm = () => {
         </div>
         <div className='mb-5'>
             <label htmlFor="salary">
-                Instituciòn
+                Salario
             </label>
             <input type="number" 
                 id="salary"

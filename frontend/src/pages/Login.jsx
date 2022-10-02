@@ -26,8 +26,13 @@ const Login = () => {
             localStorage.setItem('token', data.token); 
             localStorage.setItem('user', data); 
             setAuth(data); 
-            navigate('/admin'); 
+            if(data.role==='Admin'){
+              navigate('/admin');
 
+            }else{
+              navigate('/candidate');
+            }
+            
             console.log(data); 
             
         } catch (error) {

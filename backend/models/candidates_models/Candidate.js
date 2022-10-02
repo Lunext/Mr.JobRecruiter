@@ -1,6 +1,4 @@
-import mongoose,{mongo, Schema} from 'mongoose'; 
-
-
+import mongoose from 'mongoose'; 
 const candidateSchema=mongoose.Schema({
     cedula:{
         type:String, 
@@ -18,7 +16,7 @@ const candidateSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'JobPosition'
     },
-    departments:{
+    department:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Department'
     }
@@ -31,14 +29,18 @@ const candidateSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId, 
         ref:'Training'
     }], 
-    jobExperiences:[{
+    jobExperience:{
         type:mongoose.Schema.Types.ObjectId, 
         ref:'JobExperience'
+    },
+    languages:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Language'
     }],
-    recommendedBy:[{
+    recommendedBy:{
         type:String,
         require:true
-    }]
+    }
 
 })
 const Candidate= mongoose.model('Candidate',candidateSchema);

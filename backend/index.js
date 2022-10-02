@@ -10,6 +10,7 @@ import jobPositionsRoute from './routes/admin_routes/jobPositionsRoute.js';
 import  trainingRoute from './routes/admin_routes/trainingRoute.js'
 import jobExperienceRoute from './routes/candidate_routes/jobExperienceRoute.js'; 
 import candidatesRoute from './routes/candidate_routes/candidatesRoute.js'
+import employeeRoute from './routes/admin_routes/employeeRoute.js'
 //Creating the server
 const app= express(); 
 //For postman
@@ -41,6 +42,7 @@ app.use('/api/jobPositions', jobPositionsRoute);
 app.use('/api/trainings', trainingRoute);  
 app.use('/api/jobExperiences', jobExperienceRoute);
 app.use('/api/candidates',candidatesRoute); 
+app.use('/api/employees',employeeRoute);
 
 const PORT=process.env.PORT || 4000; 
 app.listen(PORT,()=>{

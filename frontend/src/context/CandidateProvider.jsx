@@ -7,6 +7,9 @@ const CandidateProvider = ({children}) => {
 
     const[candidates, setCandidates]=useState([]); 
     const[candidate, setCandidate]=useState({});
+    const[employees, setEmployees]=useState([]); 
+    const[employee, setEmployee]=useState({});
+    
     
     useEffect(()=>{
         getCandidates();
@@ -65,7 +68,24 @@ const CandidateProvider = ({children}) => {
         }
         return true; 
     }
+    const candidateToEmployee=async(candidate)=>{
+        const token=localStorage.getItem('token'); 
+        const config={
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+
+        }
+        if(candidate.id){
+            const{data}= await axiosClient.post(`employees/${candidate.id}`, candidate, config); 
+            const employeeToCandidate=candidates.map(candidateState=>candidateState._id===employee._id?employee:candidateState);
+            setEmployees(employeeToCandidate);
+        }
+        
+    }
     const setEdit=(candidate)=>setCandidate(candidate); 
+    const setRecruitment=(employee)=>setEmployee(employee);
     const deleteCandidate=async id=>{
         const confirma=confirm('Esta seguro que quiere eliminarla?'); 
         if(confirma){
@@ -95,7 +115,9 @@ const CandidateProvider = ({children}) => {
         saveCandidate, 
         setEdit,
         candidate, 
-        deleteCandidate
+        deleteCandidate,
+        setRecruitment,
+        candidateToEmployee
     }}
 >
     {children}

@@ -21,9 +21,9 @@ const JobExperienceList = () => {
         </>
     ): (
       <>
-        <h2 className="font-black text-3xl text-center ">No hay Capacitaciones</h2>
+        <h2 className="font-black text-3xl text-center ">No hay Expereriencias laborales</h2>
         <p className="text-xl mt-5 mb-10 text-center">
-          Comienza agregando capacitaciones{' '}
+          Comienza agregando experiencias laborales{' '}
           <span className="text-gray-600 font-bold ">y apareceran en este lugar</span>
         </p>
 

@@ -22,11 +22,9 @@ const jobExperienceSchema=mongoose.Schema({
         type:Number, 
         require:true,
     }
-
 },{
     timestamps:true,
 });
-
 const JobExperience=
 mongoose.model('JobExperience',jobExperienceSchema); 
 export default JobExperience;

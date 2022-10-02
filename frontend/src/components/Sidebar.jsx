@@ -14,12 +14,14 @@ const Sidebar = () => {
             lg:mt-0 ">
                 <Link to="/admin" className="text-white text-sm uppercase font-bold">Lenguajes</Link>
                 <Link to="/admin/competences" className='text-white text-sm  uppercase font-bold'> Competencias</Link>
-                <Link to="/admin/jobPositions" className='text-white text-sm  uppercase font-bold'> Posiciones laborales</Link>
-                <Link to="/admin/perfil" className="text-white text-sm  uppercase font-bold">Perfil</Link>
-                <Link to="/admin/trainings" className='text-white text-sm  uppercase font-bold'> Capacitaciones</Link>
+                
                 <Link to="/admin/departments" className='text-white text-sm  uppercase font-bold'> Departamentos</Link>
-                <Link to="/admin/jobExperiences" className='text-white text-sm  uppercase font-bold'> Experiencias Laborales</Link>
+                <Link to="/admin/trainings" className='text-white text-sm  uppercase font-bold'> Capacitaciones</Link>
+                <Link to="/admin/jobPositions" className='text-white text-sm  uppercase font-bold'> Puestos</Link>
+                <Link to="/admin/jobExperiences" className='text-white text-sm  uppercase font-bold'> Experiencias</Link>
                 <Link to="/admin/candidates" className='text-white text-sm  uppercase font-bold'> Candidatos</Link>
+                <Link to="/admin/employees" className='text-white text-sm  uppercase font-bold'> Reclutamiento</Link>
+                <Link to="/admin/recruitment" className='text-white text-sm  uppercase font-bold'> Empleados</Link>
                 <button
                 type="button" className="text-white text-sm  uppercase font-bold"
                 onClick={logOut}

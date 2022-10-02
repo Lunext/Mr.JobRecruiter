@@ -7,10 +7,11 @@ router.route('/')
 .post(checkAuth, addLanguage)
 .get(checkAuth,getLanguages); 
 
+
 router
 .route('/:id')
 .get(checkAuth,getLanguage)
 .put(checkAuth,updateLanguage)
-.delete(checkAuth,deleteLanguage); 
+.delete(checkAuth,deleteLanguage);
 
-export default router; 
+export default router;

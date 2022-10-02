@@ -15,6 +15,12 @@ import ManageJobPositions from './pages/ManageJobPositions';
 import ManageTraining from './pages/ManageTraining';
 import ManageJobExperiences from './pages/ManageJobExperiences';
 import ManageCandidates from './pages/ManageCandidates';
+import CandidateRoute from './Layout/CandidateRoute';
+import Dashboard from './components/Candidate/Dashboard';
+import ManageDashboard from './pages/ManageDashboard';
+import ManageEmployees from './pages/ManageEmployees';
+
+import ManageOffcialEmployees from './pages/ManageOffcialEmployees';
 function App() {
 
   
@@ -41,10 +47,20 @@ function App() {
           <Route path='/admin/trainings' element={<ManageTraining/>}/>
           <Route path='/admin/jobExperiences' element={<ManageJobExperiences/>} />
           <Route path='/admin/candidates' element={<ManageCandidates/>}/>
+          <Route path='/admin/employees' element={<ManageEmployees/>}/>
+          <Route path='/admin/recruitment' element={<ManageOffcialEmployees/>}/>
+        </Route>
 
+        <Route path='/candidate'element={<CandidateRoute/>}>
 
+         <Route index element={<ManageDashboard/>}/>
+         <Route path='/candidate/jobExperiences' element={<ManageJobExperiences/>}/>
+         <Route path='/candidate/candidates' element={<ManageCandidates/>}/>
+         
         </Route>
       </Routes>
+
+
       {/* </LanguageProvider> */}
 
     </AuthProvider>

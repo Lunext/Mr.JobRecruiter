@@ -42,11 +42,25 @@ const JobPositionForm = () => {
             return; 
 
         }
+        if(parseFloat(maxSalary)===parseFloat(minSalary)){
+            setAlert({
+                msg:'Los salarios no pueden ser iguales',
+                error:true
+            }); 
+            return;
+        }
         if(parseFloat(maxSalary)<0 || parseFloat(minSalary)<0){
             setAlert({
                 msg:'Los valores no pueden ser negativos', 
                 error:true
             });
+            return;
+        }
+        if(parseFloat(maxSalary)===0 || parseFloat(minSalary)===0){
+            setAlert({
+                msg:'Los valores no pueden ser neutros', 
+                error:true
+            })
             return;
         }
         if(parseFloat(maxSalary)<parseFloat(minSalary)){

@@ -8,8 +8,8 @@ const register= async(req,res)=>{
     console.log(req.body); 
     //Destructuring email and name; 
 
-    const{email,name, roles, password}=req.body; 
-    if(!email||!password || !Array.isArray(roles)||!roles.length){
+    const{email,name, role, password}=req.body; 
+    if(!email||!password){
         return res.status(400).json({message:"Todos los campos son obligatorios"})
     }
 
@@ -21,13 +21,14 @@ const register= async(req,res)=>{
     }
     try {
         const user=new User(req.body); 
-        const userSaved=await user.save(); 
+        const userSaved=await user.save();
+
 
         //Send email 
         emailRegister({
             email, 
             name,
-            roles, 
+            role, 
             token:userSaved.token
         })
 

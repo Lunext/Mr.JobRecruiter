@@ -45,10 +45,7 @@ const CompetenceForm = () => {
         }
 
     }
-    const onAvailabilityChanged=e=>{
-        const values=Array.from(e.target.selectedOptions,isAvailable=>isAvailable.value)
-        setIsAvailable(values);
-    }
+   
     const{msg}=alert; 
   return (
     <>

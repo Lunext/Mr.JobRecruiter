@@ -11,6 +11,7 @@
   "author": "Euren Cuevas",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.4.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
@@ -20,6 +21,7 @@
     "nodemailer": "^6.7.8"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "prisma": "^4.4.0"
   }
 }

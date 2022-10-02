@@ -46,6 +46,7 @@ const updateJobExperience=async(req,res)=>{
     jobExperience.company=req.body.company||jobExperience.company; 
     jobExperience.jobPosition=req.body.jobPosition||jobExperience.jobPosition; 
     jobExperience.dateFrom=req.body.dateFrom|| jobExperience.dateFrom; 
+    jobExperience.dateTo=req.body.dateTo|| jobExperience.dateTo; 
     jobExperience.salary=req.body.salary|| jobExperience.salary; 
 
     try{

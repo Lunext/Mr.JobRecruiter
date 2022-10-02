@@ -4,7 +4,6 @@ const Language = ({language}) => {
     const {setEdit, deleteLanguage}=useLanguage(); 
     const{name,isAvailable,_id}=language; 
   return (
-
     <div className="mx-5 my-10 bg-white shadow-md px-5 py-10 rounded-xl">
     <p className="font-bold uppercase text-blue-800 my-2 ">Lenguaje: {' '}
         <span className="font-normal normal-case text-black ">{name}</span>

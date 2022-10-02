@@ -1,16 +1,14 @@
 import {Outlet, Navigate} from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import Sidebar from '../components/Sidebar';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
-const ProtectedRoute = () => {
+const CandidateRoute = () => {
     const{auth, loading}=useAuth(); 
     if(loading) return 'loading...'
-
-    
   return (
     <>
-     <Sidebar/>
+     <Menu/>
      {auth?._id?(
         <main className='container mx-auto mt-10'>
             <Outlet/>
@@ -22,4 +20,4 @@ const ProtectedRoute = () => {
   )
 }
 
-export default ProtectedRoute
+export default CandidateRoute;

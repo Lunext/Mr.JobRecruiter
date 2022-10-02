@@ -30,6 +30,7 @@ useEffect(()=>{
         }
         
     }
+    getJobExperiences();
 },[]);
 
 const saveJobExperience=async(jobExperience)=>{

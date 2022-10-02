@@ -12,7 +12,7 @@ const Register=()=>{
     const navigate=useNavigate();
     const [name, setName]=useState(''); 
     const[email,setEmail]=useState(''); 
-    const[roles,setRoles]=useState([]); 
+    const[role,setRoles]=useState(''); 
     const[password,setPassword]=useState(''); 
     const[repeatPassword,setRepeatPassword]=useState(''); 
     const [alert,setAlert]=useState({});
@@ -21,7 +21,7 @@ const Register=()=>{
 
     const handleSubmit=async(e)=>{
         e.preventDefault(); 
-        if([name,email,roles,password, repeatPassword].includes('')){
+        if([name,email,role,password, repeatPassword].includes('')){
             setAlert({msg:'Hay campos vacios!', error:true}); 
             return; 
         }
@@ -36,9 +36,12 @@ const Register=()=>{
         setAlert({});
         try {
                  //Creating an user 
-                const url='/users'; 
-                await axiosClient.post(url,{name,email,roles,password}); 
-                console.log(axiosClient.post(url,{name,email,roles,password})); 
+                const url='/users';
+                console.log("bambambam");
+                console.log(role);
+                console.log({name,email,role,password});
+                await axiosClient.post(url,{name,email,role,password}); 
+                console.log(axiosClient.post(url,{name,email,role,password})); 
                 setAlert({
                     msg:'Creado correctamente, revisa tu correo', 
                     error: false
@@ -56,12 +59,12 @@ const Register=()=>{
     useEffect(()=>{
       setName('')
       setPassword('')
-      setRoles([])
+      setRoles('')
       
     },[])
     const onRolesChanged=e=>{
-        const values=Array.from(e.target.selectedOptions,option=>option.value)
-        setRoles(values);
+        
+        setRoles(e.target.value);
     }
     const{msg}=alert;
     return(

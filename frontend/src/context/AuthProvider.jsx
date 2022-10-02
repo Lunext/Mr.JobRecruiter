@@ -22,7 +22,7 @@ useEffect(()=>{
             }
         }
         try{
-            const{data}= await axiosClient('/users/profile', config); 
+             const{data}= await axiosClient('/users/profile', config); 
             console.log(data); 
             setAuth(data); 
 
